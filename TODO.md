@@ -6,8 +6,15 @@
 * two different sized containers (20ft(6.09m) - 40ft(12.19m))
 
 ## Bonus goals
+* 20ft/40ft high rise (259cm instead)
+* 6ft and 10ft containers on harder difficulty
 * Upgrade to hammerhead and gantry cranes
 * Multiple cranes
 * Ships with multiple destinations so you need to stack in order
 * reefers (refrigerated containers that need power outlet)
 * handle input unloading as well
+
+
+## References
+https://upload.wikimedia.org/wikipedia/commons/6/64/Kotka_shipyard_August_1968_01.jpg
+https://en.wikipedia.org/wiki/Gantry_crane
