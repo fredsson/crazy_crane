@@ -1,57 +1,50 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://assets/scenes/container/container.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/scenes/crane/crane.gd" type="Script" id=1]
 [ext_resource path="res://assets/scenes/crane/crane.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/scenes/dock/dock.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/scenes/loading_area.gd" type="Script" id=4]
+
+[sub_resource type="Environment" id=1]
+ambient_light_color = Color( 0.643137, 0.643137, 0.643137, 1 )
 
 [node name="game" type="Spatial"]
 
 [node name="main_camera" type="Camera" parent="."]
-transform = Transform( -0.918474, 0.302956, -0.254211, 0, 0.642788, 0.766044, 0.395481, 0.703592, -0.590384, -44.0057, 90.3749, -54.6764 )
+transform = Transform( -0.918474, 0.302956, -0.25421, 0, 0.642788, 0.766044, 0.395481, 0.703592, -0.590384, -40.2545, 79.4851, -54.6764 )
 size = 1.35273
 far = 1000.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 1 )
 
 [node name="outgoing_area" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25.7912, 0, 0 )
 
 [node name="loading_area" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9, -18 )
+script = ExtResource( 4 )
 
 [node name="crane" parent="loading_area" instance=ExtResource( 2 )]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0 )
+script = ExtResource( 1 )
 
 [node name="container_point" type="Spatial" parent="loading_area"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2, -0.9, 12 )
 
-[node name="container" parent="loading_area/container_point" instance=ExtResource( 1 )]
-
 [node name="container_point2" type="Spatial" parent="loading_area"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2, -0.9, 15 )
-
-[node name="container" parent="loading_area/container_point2" instance=ExtResource( 1 )]
 
 [node name="container_point3" type="Spatial" parent="loading_area"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2, -0.9, 18 )
 
-[node name="container" parent="loading_area/container_point3" instance=ExtResource( 1 )]
-
 [node name="container_point4" type="Spatial" parent="loading_area"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2, -0.9, 21 )
-
-[node name="container" parent="loading_area/container_point4" instance=ExtResource( 1 )]
 
 [node name="container_point5" type="Spatial" parent="loading_area"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2, -0.9, 24 )
 
-[node name="container" parent="loading_area/container_point5" instance=ExtResource( 1 )]
-
 [node name="incoming_area" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25.9438, 0, 17.738 )
-
-[node name="DirectionalLight" type="DirectionalLight" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -127.583, 56.8498, 0 )
-light_energy = 3.91
-light_indirect_energy = 8.27
-light_specular = 0.43
 
 [node name="dock" parent="." instance=ExtResource( 3 )]
