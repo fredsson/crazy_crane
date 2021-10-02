@@ -6,7 +6,7 @@
 * two different sized containers (20ft(6.09m) - 40ft(12.19m))
 
 ## Bonus goals
-* Upgrade to gantry crane
+* Upgrade to hammerhead and gantry cranes
 * Multiple cranes
 * Ships with multiple destinations so you need to stack in order
 * reefers (refrigerated containers that need power outlet)
